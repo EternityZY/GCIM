@@ -1,7 +1,7 @@
 # Generative Causal Interpretation Model (GCIM)
 This is the official release code of KDD2023 accepted paper: "Generative Causal Interpretation Model for Spatio-Temporal Representation Learning"
 
-The complete code will be released after the conference, please stay tuned
+**The complete code will be released after the conference, please stay tuned.**
 
 # Abstract
 Learning, interpreting, and predicting from complex and high-dimensional spatio-temporal data is a natural ability of humans and other intelligent agents, 
