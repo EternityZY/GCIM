@@ -1,0 +1,93 @@
+dataset_name: 30min.npz
+device: cuda:0
+expid: 1
+log_level: INFO
+model_name: GCIM
+runs: 3
+test_only: False
+base_path: data/train_data_NYC
+
+data:
+  freq: 30min
+  name: NYC
+  num_for_predict: 6
+  num_for_target: 1
+  num_of_days: 0
+  num_of_hours: 1
+  num_of_weeks: 0
+  num_shift: 0
+  points_per_hour: 2
+  test_batch_size: 64
+  train_batch_size: 64
+  external: False
+  val_batch_size: 64
+
+model:
+  adj: adj
+  norm_graph: sym
+  init_intra_graph: False
+  init_inter_graph: False
+  node: 51
+  time: 6
+  input_dim: 4
+  latent_dim: 8
+  hidden_dim: 64
+
+  domain_num: 20
+
+  #
+  posterior_type: GraphGRU
+  gcn_depth: 2
+  dropout_prob: 0
+  input_fusion: True
+  random_sampling: True
+
+  # Spline
+  spline_bin: 128
+  spline_bound: 10
+  layer_num: 2
+  spline_order: linear
+
+  # prior
+  prior_type: spline
+
+  # generator
+  generator_type: GraphGRU
+
+  # noise
+  z_noise_dist_type: mlp
+  base_dist_type: gaussian
+
+  # prediction
+  prediction_type: sample_eps
+
+  # pretarin
+  use_warm_start: False
+
+
+train:
+  base_lr: 0.001
+  weight_decay: 0.0001
+  epoch_start: 0
+  epochs: 500
+  global_step: 0
+  load_initial: False
+  tensorboard: False
+  visual_graph: True
+
+  max_grad_norm: 5
+  milestones: [80, 160, 240, 300, 350]
+  lr_decay_ratio: 0.5
+
+  min_learning_rate: 2.0e-06
+  print_every: 1
+  tolerance: 50
+
+  rec: True
+  pred: True
+  correlation: Pearson
+  # Rec, pred, KL, logp,
+  loss_weight: [1, 10, 0.1, 0.1, 0.1]
+
+  best_mode:
+  description:
