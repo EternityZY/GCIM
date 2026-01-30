@@ -42,11 +42,11 @@ Thank you for your attention to our work
 If you find this repository, e.g., the code and the datasets, useful in your research, please cite the following paper:
 
 ```
-@inproceedings{ZhaoKDD2023GCIM,
-    title={Generative Causal Interpretation Model for Spatio-Temporal Representation Learning},
-    author={Zhao, Yu and Deng, Pan and Liu, Junting and Jia, Xiaofeng and Zhang, Jianwei},
-    booktitle={Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery \& Data Mining (KDD ’23)},
-    DOI={https://doi.org/10.1145/3580305.3599363},
-    year={2023},
+@inproceedings{zhao2023generative,
+  title={Generative causal interpretation model for spatio-temporal representation learning},
+  author={Zhao, Yu and Deng, Pan and Liu, Junting and Jia, Xiaofeng and Zhang, Jianwei},
+  booktitle={Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+  pages={3537--3548},
+  year={2023}
 }
 ```
